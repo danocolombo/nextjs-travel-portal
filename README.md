@@ -2,9 +2,10 @@
 
 This is a simple experiment to implement a nextjs application on Vercel and use some tools I have not used frequently.
 
+-   ShadCn UI library
 -   Supabase with Prisma
 -   Clerk
--   Talewinds
+-   Tailwinds
 -   Zod
 -   Stripe
 -   Vercel deployment
