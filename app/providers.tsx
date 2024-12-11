@@ -2,17 +2,21 @@
 
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
+import { Toaster } from '@/components/ui/toaster';
 
 function Providers({ children }: { children: ReactNode }) {
     return (
-        <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-        >
-            {children}
-        </ThemeProvider>
+        <>
+            <Toaster />
+            <ThemeProvider
+                attribute='class'
+                defaultTheme='system'
+                enableSystem
+                disableTransitionOnChange
+            >
+                {children}
+            </ThemeProvider>
+        </>
     );
 }
 
