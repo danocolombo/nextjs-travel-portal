@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 import NavBar from '@/components/navbar/NavBar';
+import { Toaster } from "@/components/ui/toaster"
 import Providers from '@/app/providers';
 import { ClerkProvider } from '@clerk/nextjs';
 // import {
@@ -32,6 +33,7 @@ export default function RootLayout({
                     <Providers>
                         <NavBar />
                         <main className='container py-10'>{children}</main>
+                        <Toaster/>
                     </Providers>
                 </body>
             </html>
