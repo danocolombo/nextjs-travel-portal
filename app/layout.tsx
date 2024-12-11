@@ -5,6 +5,14 @@ import '@/app/globals.css';
 import NavBar from '@/components/navbar/NavBar';
 import Providers from '@/app/providers';
 import { ClerkProvider } from '@clerk/nextjs';
+// import {
+//     ClerkProvider,
+//     SignInButton,
+//     SignedIn,
+//     SignedOut,
+//     UserButton,
+// } from '@clerk/nextjs';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
