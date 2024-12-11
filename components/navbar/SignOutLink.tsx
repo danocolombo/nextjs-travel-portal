@@ -1,7 +1,16 @@
 import React from 'react';
-
+import { SignOutButton } from '@clerk/nextjs';
 function SignOutLink() {
-    return <button className='w-full text-left'>Logout</button>;
+    const handleLogout = () => {
+        alert('You have been signed out.');
+    }   
+    return (
+        <SignOutButton redirectUrl='/'>
+            
+                Logout
+            
+        </SignOutButton>
+    );
 }
 
 export default SignOutLink;
