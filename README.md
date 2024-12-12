@@ -13,3 +13,7 @@ This is a simple experiment to implement a nextjs application on Vercel and use 
 This was only possible by the great tutorial of John Smilga the codding addict...
 
 Udemy - Mastering Next.js
+
+----
+### Development needs
+1. .env.local file needs to define the Clerk definitions
