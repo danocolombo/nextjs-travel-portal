@@ -2,6 +2,7 @@ import React from 'react';
 import FormContainer from '@/components/form/FormContainer';
 import FormInput from '@/components/form/FormInput';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 import { SubmitButton } from '@/components/form/Buttons';
 const createProfileAction = async (prevState: any, formData: FormData) => {
     'use server';
@@ -33,6 +34,7 @@ function CreateProfilePage() {
                             type='text'
                         />
                     </div>
+
                     <SubmitButton text='Create Profile' className='mt-8' />
                 </FormContainer>
             </div>
