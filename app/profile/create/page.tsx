@@ -1,15 +1,10 @@
 import React from 'react';
 import FormContainer from '@/components/form/FormContainer';
 import FormInput from '@/components/form/FormInput';
+import { createProfileAction } from '@/utils/actions';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { SubmitButton } from '@/components/form/Buttons';
-const createProfileAction = async (prevState: any, formData: FormData) => {
-    'use server';
-    const firstName = formData.get('firstName') as string;
-    console.log('FIRST NAME:', firstName);
-    return { message: 'Profile created' };
-};
 
 function CreateProfilePage() {
     return (
