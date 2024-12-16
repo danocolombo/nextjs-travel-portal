@@ -2,15 +2,17 @@
 
 This is a simple experiment to implement a nextjs application on Vercel and use some tools I have not used frequently.
 
+-   NextJs 14
 -   ShadCn UI library
--   Supabase with Prisma
+-   Supabase 2.42
+-   Prisma 5.22.0
 -   Clerk
 -   Tailwinds
 -   Zod
 -   Stripe
 -   Vercel deployment
 
-This was only possible by the great tutorial of John Smilga the codding addict...
+This was only possible by the great tutorial of John Smilga the coding addict...
 
 Udemy - Mastering Next.js
 
