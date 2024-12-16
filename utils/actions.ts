@@ -19,6 +19,15 @@ const renderError = (error: unknown): { message: string } => {
         message: error instanceof Error ? error.message : 'An error occurred',
     };
 };
+//helper function to get the current user
+const getAuthUser = async () => {
+    const user = await currentUser();
+    if (!user) {
+        throw new Error('You must be logged in to access this route');
+    }
+    if (!user.privateMetadata.hasProfile) redirect('/profile/create');
+    return user;
+};
 
 export const createProfileAction = async (
     prevState: any,
@@ -72,3 +81,63 @@ export const fetchProfileImage = async () => {
 
     return profile?.profileImage;
 };
+export const fetchProfile = async () => {
+    //this checks if the user is logged in
+    const user = await getAuthUser();
+    // now get the user from the database
+    const profile = await db.profile.findUnique({
+        where: {
+            clerkId: user.id,
+        },
+    });
+    if (!profile) redirect('/profile/create');
+    return profile;
+};
+export const updateProfileAction = async (
+    prevState: any,
+    formData: FormData
+): Promise<{ message: string }> => {
+    const user = await getAuthUser();
+
+    try {
+        const rawData = Object.fromEntries(formData);
+        const validatedFields = validateWithZodSchema(profileSchema, rawData);
+
+        await db.profile.update({
+            where: {
+                clerkId: user.id,
+            },
+            data: validatedFields,
+        });
+
+        revalidatePath('/profile');
+        return { message: 'Profile updated successfully' };
+    } catch (error) {
+        return renderError(error);
+    }
+};
+
+// export const updateProfileImageAction = async (
+//     prevState: any,
+//     formData: FormData
+// ): Promise<{ message: string }> => {
+//     const user = await getAuthUser();
+//     try {
+//         const image = formData.get('image') as File;
+//         const validatedFields = validateWithZodSchema(imageSchema, { image });
+//         const fullPath = await uploadImage(validatedFields.image);
+
+//         await db.profile.update({
+//             where: {
+//                 clerkId: user.id,
+//             },
+//             data: {
+//                 profileImage: fullPath,
+//             },
+//         });
+//         revalidatePath('/profile');
+//         return { message: 'Profile image updated successfully' };
+//     } catch (error) {
+//         return renderError(error);
+//     }
+// };
