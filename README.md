@@ -24,3 +24,7 @@ Udemy - Mastering Next.js
 2. .env for Subabase
 3. install prisma and run locally...
    <code>npx prisma studio</code>
+
+    if you make changes to local prisma/schema.prisma to push to database (migrate)...
+    <code>npx prisma db push
+    </code>
