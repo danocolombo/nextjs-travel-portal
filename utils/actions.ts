@@ -39,8 +39,7 @@ export const createProfileAction = async (
         if (!user) throw new Error('Please login to create a profile');
 
         const rawData = Object.fromEntries(formData);
-        // const validatedFields = validateWithZodSchema(profileSchema, rawData);
-        const validatedFields = profileSchema.parse(rawData);
+        const validatedFields = validateWithZodSchema(profileSchema, rawData);
         await db.profile.create({
             data: {
                 clerkId: user.id,
@@ -56,13 +55,13 @@ export const createProfileAction = async (
             },
         });
     } catch (error) {
-        return {
-            message:
-                error instanceof Error
-                    ? error.message
-                    : 'failure in createProfileAction',
-        };
-        // return renderError(error);
+        // return {
+        //     message:
+        //         error instanceof Error
+        //             ? error.message
+        //             : 'failure in createProfileAction',
+        // };
+        return renderError(error);
     }
     redirect('/');
 };
