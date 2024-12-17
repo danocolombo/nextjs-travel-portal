@@ -762,7 +762,7 @@ const createProfileAction = async (prevState: any, formData: FormData) => {
     const firstName = formData.get('firstName') as string;
     if (firstName !== 'shakeAndBake')
         return { message: 'there was an error...' };
-    return { message: 'Profile Created' };
+    return { message: 'Profile Created' };z
 };
 
 function CreateProfile() {
