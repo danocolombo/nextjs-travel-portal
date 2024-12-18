@@ -6,8 +6,11 @@ import { Button } from '@/components/ui/button';
 import { SignInButton } from '@clerk/nextjs';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { LuTrash2 } from 'react-icons/lu';
-type btnSize = 'default' | 'lg' | 'sm';
 
+// these types provide the ability to set
+// values as enums. Props will default to 'sm'
+// NOTE: size is optional
+type btnSize = 'default' | 'lg' | 'sm';
 type SubmitButtonProps = {
     className?: string;
     text?: string;
@@ -17,7 +20,7 @@ type SubmitButtonProps = {
 export function SubmitButton({
     className = '',
     text = 'submit',
-    size = 'lg',
+    size = 'sm',
 }: SubmitButtonProps) {
     const { pending } = useFormStatus();
 

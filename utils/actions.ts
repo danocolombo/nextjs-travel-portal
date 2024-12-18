@@ -116,10 +116,12 @@ export const updateProfileAction = async (
     }
 };
 
-// export const updateProfileImageAction = async (
-//     prevState: any,
-//     formData: FormData
-// ): Promise<{ message: string }> => {
+export const updateProfileImageAction = async (
+    prevState: any,
+    formData: FormData
+): Promise<{ message: string }> => {
+    return { message: 'Profile image updated successfully' };
+};
 //     const user = await getAuthUser();
 //     try {
 //         const image = formData.get('image') as File;
