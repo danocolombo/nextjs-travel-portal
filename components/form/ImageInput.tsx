@@ -2,6 +2,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 function ImageInput() {
+    // THIS IS FORM COMPONENTS TO UPLOAD AN IMAGE....
     // can pass in props for name and label, if desired, but we know
     // this will be file input for image, so we just define it here
     // and set the name to 'image'

@@ -7,9 +7,9 @@ function Logo() {
         <Button size='icon' asChild>
             <Link
                 href='/'
-                className='flex items-center justify-center bg-blue-500'
+                className='flex items-center justify-center bg-primary'
             >
-                <HiHomeModern className='w-full h-full text-white' />
+                <HiHomeModern className='w-full h-full text-accent bg-primary' />
             </Link>
         </Button>
     );

@@ -9,7 +9,7 @@ import { LuTrash2 } from 'react-icons/lu';
 
 // these types provide the ability to set
 // values as enums. Props will default to 'sm'
-// NOTE: size is optional
+
 type btnSize = 'default' | 'lg' | 'sm';
 type SubmitButtonProps = {
     className?: string;
@@ -17,6 +17,7 @@ type SubmitButtonProps = {
     size?: btnSize;
 };
 
+// NOTE: size is optional, defaults to 'sm'
 export function SubmitButton({
     className = '',
     text = 'submit',
