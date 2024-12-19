@@ -5,9 +5,19 @@ import { useToast } from '@/hooks/use-toast';
 function SignOutLink() {
     const { toast } = useToast();
     const handleLogout = () => {
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+        });
         toast({
-            title: 'Scheduled: Catch up',
-            description: 'Friday, February 10, 2023 at 5:57 PM',
+            title: 'Successfully logged out',
+            description: formattedDate,
         });
     };
     return (
