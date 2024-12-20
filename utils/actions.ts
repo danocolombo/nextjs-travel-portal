@@ -147,8 +147,9 @@ export const createPropertyAction = async (
     try {
         const rawData = Object.fromEntries(formData);
         const validatedFields = validateWithZodSchema(propertySchema, rawData);
+        return { message: 'Property created successfully' };
     } catch (error) {
         return renderError(error);
     }
-    redirect('/');
+    // redirect('/');
 };
