@@ -4,6 +4,7 @@ import { createPropertyAction } from '@/utils/actions';
 import { SubmitButton } from '@/components/form/Buttons';
 import PriceInput from '@/components/form/PriceInput';
 import CategoriesSelectInput from '@/components/form/CategoriesSelectInput';
+import TextAreaInput from '@/components/form/TextAreaInput';
 
 function CreateProperty() {
     //* input names MUST be the value of the fields in the schema *//
@@ -31,7 +32,10 @@ function CreateProperty() {
                         <PriceInput />
                         <CategoriesSelectInput />
                     </div>
-                    {/* text area / description */}
+                    <TextAreaInput
+                        name='description'
+                        labelText='Description (10 - 1000 Words)'
+                    />
                     <SubmitButton text='create rental' className='mt-12' />
                 </FormContainer>
             </div>
