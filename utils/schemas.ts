@@ -68,6 +68,7 @@ export const propertySchema = z.object({
             message: 'tagline must be less than 100 characters.',
         }),
     price: z.coerce.number().int().min(0, {
+        // this helper function converts string to number
         message: 'price must be a positive number.',
     }),
     category: z.string(),
