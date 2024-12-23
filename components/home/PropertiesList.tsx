@@ -1,6 +1,12 @@
 import React from 'react';
 
-function PropertiesList() {
+function PropertiesList({
+    category,
+    search,
+}: {
+    category?: string;
+    search?: string;
+}) {
     return <div>PropertiesList</div>;
 }
 
