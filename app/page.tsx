@@ -1,10 +1,12 @@
-import { Button } from '@/components/ui/button';
+import CategoriesList from '@/components/home/CategoriesList';
+import PropertiesContainer from '@/components/home/PropertiesContainer';
 
-const HomePage = () => {
+function HomePage() {
     return (
-        <div>
-            <h1 className='text-3xl'>ABNB Home Page</h1>
-        </div>
+        <section>
+            <CategoriesList />
+            <PropertiesContainer />
+        </section>
     );
-};
+}
 export default HomePage;
