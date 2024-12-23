@@ -189,6 +189,7 @@ export const fetchProperties = async ({
             country: true,
             image: true,
             price: true,
+            image: true,
         },
         orderBy: {
             createdAt: 'desc',
