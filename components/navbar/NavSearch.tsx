@@ -15,6 +15,7 @@ function NavSearch() {
         searchParams.get('search')?.toString() || ''
     );
     const handleSearch = useDebouncedCallback((value: string) => {
+        // this debounce function calls this page to reload with parameters
         const params = new URLSearchParams(searchParams);
         if (value) {
             params.set('search', value);

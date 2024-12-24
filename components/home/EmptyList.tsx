@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 function EmptyList({
     heading = 'No items in the list.',
     message = 'Keep exploring our properties',
